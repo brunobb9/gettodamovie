@@ -1,6 +1,6 @@
 .results {
   width: 100%;
-  max-width: 100%;
+    max-width: 900px;
   margin: 3rem auto;
   display: flex;
   flex-direction: column;
