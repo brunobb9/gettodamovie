@@ -73,6 +73,7 @@ p.movieOverview {
 @media screen and (max-width: 600px) {
   .movieCard {
     flex-direction: column;
+    max-width:81%;
   }
 
   .moviePoster {
@@ -91,12 +92,6 @@ p.movieOverview {
 
   .movieDate {
     margin: 0.25rem 0 0 0;
-  }
-}
-
-@media screen and (max-width: 425px) {
-  .movieCard {
-    max-width:86%;
   }
 }
 
