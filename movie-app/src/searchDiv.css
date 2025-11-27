@@ -2,6 +2,7 @@
 @media (max-width: 768px) {
     input.searchBar {
     width: 50%;
+    height:2rem;
 }
 }
 
