@@ -1,4 +1,4 @@
-.searchDiv {
+ee.searchDiv {
     position: relative;
     margin-top: 1rem;
     z-index: 0;
@@ -12,4 +12,10 @@
 input.searchBar {
     width: 20%;
     height: 2rem;
+}
+
+@media (max-width: 768px) {
+    input.searchBar {
+    width: 50%;
+}
 }
