@@ -1,0 +1,15 @@
+.searchDiv {
+    position: relative;
+    margin-top: 1rem;
+    z-index: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width:100%;
+}
+
+input.searchBar {
+    width: 20%;
+    height: 2rem;
+}
