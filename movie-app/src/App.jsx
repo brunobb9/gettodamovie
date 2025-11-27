@@ -4,7 +4,7 @@ import './bodyContainer.css'
 import './Header.css'
 import './searchDiv.css'
 import './Results.css'
-import Header from './header'
+import Header from './Header'
 import Search from './Search'
 import Body from './Body'
 
