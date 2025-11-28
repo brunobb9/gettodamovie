@@ -11,11 +11,13 @@
 
 input.searchBar {
     width: 20%;
-    height: 2rem;
+    height: 2.5rem;
 }
 
 @media (max-width: 768px) {
     input.searchBar {
     width: 50%;
+    height: 2.5rem;
+
 }
 }
