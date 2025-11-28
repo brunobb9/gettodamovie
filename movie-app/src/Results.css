@@ -78,6 +78,22 @@ html, body {
   text-align: left !important;
 }
 
+.introText {
+  animation: 1s fadeInUp;
+  overflow:hidden;
+}
+
+@keyframes fadeInUp {
+  0% {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
 
 @media screen and (max-width: 600px) {
   .movieCard {
