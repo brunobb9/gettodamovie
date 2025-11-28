@@ -78,9 +78,7 @@ html, body {
   text-align: left !important;
 }
 
-input.searchBar {
-  height:2.5rem;
-}
+
 
 @media screen and (max-width: 600px) {
   .movieCard {
