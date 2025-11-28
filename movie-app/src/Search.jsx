@@ -39,7 +39,7 @@ return (
 
     {results.length === 0 && (
         <div className="introText">
-          <h2 style={{marginTop:"6rem", fontSize:"3rem" }}>Here you can find all your favorite films.</h2><h2>Now Get To Da Movie!</h2>
+          <h2 style={{marginTop:"6rem", fontSize:"2.5rem" }}>Here you can find all your favorite films.</h2><h2>Now Get To Da Movie!</h2>
         </div>
       )}
 
