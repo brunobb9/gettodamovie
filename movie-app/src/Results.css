@@ -79,7 +79,6 @@ html, body {
 }
 
 
-
 @media screen and (max-width: 600px) {
   .movieCard {
     flex-direction: column;
