@@ -14,11 +14,24 @@ input.searchBar {
     height: 2.5rem;
 }
 
+div.introText {
+    margin-top:6rem;
+}
+
+h2.h2intro {
+    font-size:2.5rem;
+}
+
 @media (max-width: 768px) {
     input.searchBar {
     width: 50%;
     height: 2.5rem;
-
 }
+
+div.introText {
+    margin-top:0;
+}
+
+
 }
 
