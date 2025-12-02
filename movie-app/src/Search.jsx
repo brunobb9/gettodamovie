@@ -85,7 +85,7 @@ return (
       <div className="movieContent">
         
         <div className="movieTopRow">
-          <h3>{movie.title}</h3>
+          <h3 onClick={() => openWikipedia(movie.title)} style={{cursor:"pointer"}}>{movie.title}</h3>
           <span className="movieDate">{movie.release_date}</span>
         </div>
 
