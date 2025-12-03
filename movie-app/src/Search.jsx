@@ -27,6 +27,9 @@ const openWikipedia = (title) => {
 
 return (
   <>
+  <div class="container">
+  <div class="box">
+      <form>
     <div className="searchDiv">
       <input
   type="text"
@@ -41,8 +44,12 @@ return (
   }}
 />
 
+
       <button onClick={handleSearch}>Search</button>
 
+    </div>
+    </form>
+    </div>
     </div>
 
 
