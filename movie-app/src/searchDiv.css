@@ -11,7 +11,10 @@
 
 input.searchBar {
     width: 20%;
-    height: 2.5rem;
+    height: 2.7rem;
+    background-color:white;
+    color: #1a1a1b;
+    border-color: #4b4e55!important;
 }
 
 div.introText {
@@ -22,10 +25,15 @@ h2.h2intro {
     font-size:2.5rem;
 }
 
+div.searchDiv button {
+    background-color:#4b4e55;
+    color:white;
+}
+
 @media (max-width: 768px) {
     input.searchBar {
     width: 50%;
-    height: 2.5rem;
+    height: 2.7rem;
 }
 
 div.introText {

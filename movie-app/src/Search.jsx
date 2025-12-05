@@ -20,16 +20,58 @@ console.log(data.results);
 setResults(data.results);
 }
 
-const openWikipedia = (title) => {
-  const url=`https://en.wikipedia.org/w/index.php?search=${encodeURIComponent(title)}`
-  window.open(url, "_blank");
+const openWikipedia = async (movie) => {
+  const apiKey = "98594a4eda50697575b42d75dc200b7f";
+
+  try {
+    const externalRes = await fetch(
+      `https://api.themoviedb.org/3/movie/${movie.id}/external_ids?api_key=${apiKey}`
+    );
+    
+    const externalData = await externalRes.json();
+
+    if (!externalData.wikidata_id) {
+      window.open(
+        `https://en.wikipedia.org/w/index.php?search=${encodeURIComponent(movie.title)}`,
+        "_blank"
+      );
+      return;
+    }
+
+    const wikidataRes = await fetch(
+      `https://www.wikidata.org/wiki/Special:EntityData/${externalData.wikidata_id}.json`
+    );
+    const wikidata = await wikidataRes.json();
+
+    const entity = wikidata.entities[externalData.wikidata_id];
+    const wikipediaTitle = entity.sitelinks?.enwiki?.title;
+
+    if (!wikipediaTitle) {
+      window.open(
+        `https://en.wikipedia.org/w/index.php?search=${encodeURIComponent(movie.title)}`,
+        "_blank"
+      );
+      return;
+    }
+    window.open(
+      `https://en.wikipedia.org/wiki/${encodeURIComponent(wikipediaTitle)}`,
+      "_blank"
+    );
+
+  } catch (error) {
+    console.error(error);
+
+    window.open(
+      `https://en.wikipedia.org/w/index.php?search=${encodeURIComponent(movie.title)}`,
+      "_blank"
+    );
+  }
 };
+
+
 
 return (
   <>
-  <div class="container">
-  <div class="box">
-      <form>
     <div className="searchDiv">
       <input
   type="text"
@@ -44,12 +86,8 @@ return (
   }}
 />
 
-
       <button onClick={handleSearch}>Search</button>
 
-    </div>
-    </form>
-    </div>
     </div>
 
 
@@ -83,7 +121,7 @@ return (
           <img
             src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`}
             alt={movie.title}
-            onClick={() => openWikipedia(movie.title)}
+onClick={() => openWikipedia(movie)}
             style = {{cursor:"pointer"}}
           />
         )}
@@ -92,7 +130,8 @@ return (
       <div className="movieContent">
         
         <div className="movieTopRow">
-          <h3 onClick={() => openWikipedia(movie.title)} style={{cursor:"pointer"}}>{movie.title}</h3>
+          <h3 onClick={() => openWikipedia(movie)}
+ style={{cursor:"pointer"}}>{movie.title}</h3>
           <span className="movieDate">{movie.release_date}</span>
         </div>
 
